@@ -10,6 +10,8 @@ export default function Navbar() {
   function logOut() 
   {
     localStorage.removeItem("userToken");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("name");
     logoutNavigation("/login");
   }
 

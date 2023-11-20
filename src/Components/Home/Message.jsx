@@ -91,12 +91,13 @@ export default function Message(props) {
       <p className='fs-5 fw-semibold'>{message}</p>
       <p className='text-secondary'>{formattedDate}</p>
       <button type="button" className="btn btn-primary" onClick={showMessage}>{isShown? t("hideMessage") : t("showMessage")} </button>
-      {isAdmin? <div>
+      
+      {isAdmin === 'true' && isAdmin ? (<div>
         <p>ip: {ip}
         <br />
         userAgent: {userAgent}
         </p>
-        </div> : <div></div>}
+        </div>) : null}
       <i onClick={deleteMessage} className={i18n.language === 'en' ? 'fa-solid fa-xmark position-absolute end-0 top-0 p-3 mouse-pointer' : 'fa-solid fa-xmark position-absolute start-0 top-0 p-3 mouse-pointer'} ></i>
     </div>
   )

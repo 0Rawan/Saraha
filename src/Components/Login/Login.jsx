@@ -102,9 +102,10 @@ export default function Login() {
               placeholder={t("password")}
             />
             {loading ? 
-            <button className="bg-main w-100 rounded-5 py-2 sign " disabled> Loading</button>
+            <button className="bg-main w-100 rounded-5 py-2 sign " disabled> {t("Loading")}</button>
             : 
-            <button className="bg-main w-100 rounded-5 py-2 sign">{t("LoginBtn")}  </button>}
+            <button className="bg-main w-100 rounded-5 py-2 sign">{t("LoginBtn")}  </button>
+            }
             
             <p className="text-danger fs-6 text-center pt-1">{loginError}</p>
             <p className="pt-2 text-secondary text-center">
