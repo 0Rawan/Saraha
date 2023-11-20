@@ -84,8 +84,12 @@ export default function SignUp() {
                 <input onChange={getUserData} type="text" className='form-control w-100 mx-auto my-3' name='name' placeholder={t("name")} />
                 <input onChange={getUserData} type="email" className='form-control w-100 mx-auto my-3' name='email' placeholder={t("email")} />
                 <input onChange={getUserData} type="password" className='form-control w-100 mx-auto my-3' name='password' placeholder={t("password")}/>
-                <button onChange={getUserData} className='bg-main w-100 rounded-5 py-2 sign'>{t("SignUp")}</button>
-                
+                {loading ? 
+                  <button className="bg-main w-100 rounded-5 py-2 sign " disabled> {t("Loading")}</button>
+                  : 
+                  <button onChange={getUserData} className='bg-main w-100 rounded-5 py-2 sign'>{t("SignUp")}</button>
+
+                  }
                 <p className='py-2 text-secondary text-center'>{t("Alreadyhaveanaccount?")} <Link className='text-decoration-none text-main' to="/login">{t("Loginnow")}</Link ></p>
             </form>
         </div>
